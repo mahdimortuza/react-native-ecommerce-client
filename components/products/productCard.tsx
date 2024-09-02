@@ -2,11 +2,12 @@ import { Href, Link } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-type TProduct = {
+export type TProduct = {
   _id: string;
   name: string;
   description: string;
   price: number;
+  quantity: number;
   category: string;
   imageUrl: string;
 };
