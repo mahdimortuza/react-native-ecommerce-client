@@ -39,8 +39,13 @@ export default function ProductDetail() {
           <TouchableOpacity
             style={styles.btnCart}
             onPress={() => alert(`${qty} items add to cart.`)}
+            disabled={(productDetails?.quantity as number) <= 0}
           >
-            <Text style={styles.btnCartText}>Add to cart</Text>
+            <Text style={styles.btnCartText}>
+              {(productDetails?.quantity as number) > 0
+                ? "Add to cart"
+                : "Out of stock"}
+            </Text>
           </TouchableOpacity>
           <View style={styles.btnContainer}>
             <TouchableOpacity style={styles.btnQTY} onPress={handleRemoveQty}>
