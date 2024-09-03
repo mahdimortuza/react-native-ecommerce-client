@@ -61,6 +61,12 @@ export default function TabLayout() {
             headerTitle: "User Detail",
           }}
         />
+        <Stack.Screen
+          name="adminPanel/[_id]"
+          options={{
+            headerTitle: "Dashboard",
+          }}
+        />
       </Stack>
 
       <View style={styles.footer}>

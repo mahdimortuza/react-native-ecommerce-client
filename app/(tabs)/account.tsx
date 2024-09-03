@@ -48,8 +48,10 @@ export default function Account() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.btn}>
-          <FontAwesome style={styles.btnText} name="windows" />
-          <Text style={styles.btnText}> Admin panel </Text>
+          <Link href={`adminPanel/${UserData._id}` as Href<string>}>
+            <FontAwesome style={styles.btnText} name="windows" />
+            <Text style={styles.btnText}> Admin panel </Text>
+          </Link>
         </TouchableOpacity>
       </View>
     </View>
