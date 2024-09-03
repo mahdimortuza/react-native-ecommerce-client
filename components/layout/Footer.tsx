@@ -1,10 +1,13 @@
-import { router, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 export default function Footer() {
-  const route = useRouter();
+  const router = useRouter();
+  const handleLogout = () => {
+    alert("Log out successfully."), router.push("/account");
+  };
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -61,10 +64,7 @@ export default function Footer() {
         <Text style={styles.iconText}>Cart</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        style={styles.menuContainer}
-        onPress={() => alert("log out?")}
-      >
+      <TouchableOpacity style={styles.menuContainer} onPress={handleLogout}>
         <FontAwesome name="power-off" />
         <Text style={styles.iconText}>Logout</Text>
       </TouchableOpacity>

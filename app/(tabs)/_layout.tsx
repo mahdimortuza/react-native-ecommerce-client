@@ -4,15 +4,27 @@ import { Stack } from "expo-router";
 import React from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
 
-export default function TabLayout({ _id }: { _id: string }) {
+export const unstable_settings = {
+  initialRouteName: "/login",
+};
+
+export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
     <>
       <StatusBar />
+
       <Stack>
         <Stack.Screen
           name="login"
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="register"
           options={{
             headerShown: false,
           }}
@@ -37,12 +49,12 @@ export default function TabLayout({ _id }: { _id: string }) {
             headerShown: false,
           }}
         />
-        {/* <Stack.Screen
-          name={`productDetail/${_id}`}
+        <Stack.Screen
+          name="productDetail/[_id]"
           options={{
-            headerShown: false,
+            headerTitle: "Product Detail",
           }}
-        /> */}
+        />
       </Stack>
 
       <View style={styles.footer}>

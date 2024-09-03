@@ -3,19 +3,23 @@ import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function Login() {
+export default function Register() {
   const router = useRouter();
   const loginImage =
     "https://www.certifiedfinancialguardian.com/images/blog-wp-login.png";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [contact, setContact] = useState("");
 
-  const handleLogin = () => {
-    if (!email || !password) {
-      return alert("Please email and password");
+  const handleRegister = () => {
+    if (!email || !password || !name || !address || !city || !contact) {
+      return alert("Please provide all fields");
     }
-    alert("Logged in successfully.");
+    alert("Registered successfully.");
     router.push("/");
   };
   return (
@@ -28,20 +32,45 @@ export default function Login() {
         autoComplete={"email"}
       />
       <InputBox
+        placeholder={"Enter your name"}
+        value={name}
+        setValue={setName}
+        autoComplete={"name"}
+      />
+      <InputBox
         placeholder={"Enter your password"}
         value={password}
         setValue={setPassword}
         secureTextEntry={true}
       />
+      <InputBox
+        placeholder={"Enter your address"}
+        value={address}
+        setValue={setAddress}
+        autoComplete={"address-line1"}
+      />
+      <InputBox
+        placeholder={"Enter your city"}
+        value={city}
+        setValue={setCity}
+        autoComplete={"country"}
+      />
+      <InputBox
+        placeholder={"Enter your contact no"}
+        value={contact}
+        setValue={setContact}
+        autoComplete={"tel"}
+      />
       <View style={styles.btnContainer}>
-        <TouchableOpacity style={styles.loginBtn} onPress={handleLogin}>
-          <Text style={styles.loginBtnText}>Login</Text>
+        <TouchableOpacity style={styles.loginBtn} onPress={handleRegister}>
+          <Text style={styles.loginBtnText}>Register</Text>
         </TouchableOpacity>
+
         <Text>
-          New here..?
-          <Text style={styles.link} onPress={() => router.push("/register")}>
+          Already have account..?
+          <Text style={styles.link} onPress={() => router.push("/login")}>
             {" "}
-            Register
+            Login
           </Text>
         </Text>
       </View>
