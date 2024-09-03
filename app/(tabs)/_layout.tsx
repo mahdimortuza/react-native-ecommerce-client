@@ -5,7 +5,7 @@ import React from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
 
 export const unstable_settings = {
-  initialRouteName: "/login",
+  initialRouteName: "/notification",
 };
 
 export default function TabLayout() {
@@ -53,6 +53,12 @@ export default function TabLayout() {
           name="productDetail/[_id]"
           options={{
             headerTitle: "Product Detail",
+          }}
+        />
+        <Stack.Screen
+          name="profileDetail/[_id]"
+          options={{
+            headerTitle: "User Detail",
           }}
         />
       </Stack>

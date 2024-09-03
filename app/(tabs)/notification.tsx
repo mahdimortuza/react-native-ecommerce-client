@@ -4,15 +4,16 @@ export default function Notification() {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={{ fontSize: 30 }}>Notification</Text>
+        <Text>Oops ! you do not have any notification yet.</Text>
       </View>
-      <Text style={{ color: "#000" }}>
-        This app includes example code to help you get started.
-      </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+  },
 });
