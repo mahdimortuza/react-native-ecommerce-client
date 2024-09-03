@@ -6,9 +6,6 @@ export default function TabTwoScreen() {
       <View>
         <Text style={{ fontSize: 30 }}>Explore</Text>
       </View>
-      <Text style={{ color: "#000" }}>
-        This app includes example code to help you get started.
-      </Text>
     </View>
   );
 }

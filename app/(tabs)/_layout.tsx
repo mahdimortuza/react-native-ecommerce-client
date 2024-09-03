@@ -1,8 +1,7 @@
-import { Stack } from "expo-router";
-import React from "react";
-
 import Footer from "@/components/layout/Footer";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { Stack } from "expo-router";
+import React from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
 
 export default function TabLayout({ _id }: { _id: string }) {
@@ -12,6 +11,13 @@ export default function TabLayout({ _id }: { _id: string }) {
     <>
       <StatusBar />
       <Stack>
+        <Stack.Screen
+          name="login"
+          options={{
+            headerShown: false,
+          }}
+        />
+
         <Stack.Screen
           name="index"
           options={{
