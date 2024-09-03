@@ -27,7 +27,12 @@ export default function Account() {
           </Link>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => {
+            router.push("/myOrders");
+          }}
+        >
           <FontAwesome style={styles.btnText} name="list" />
           <Text style={styles.btnText}> My orders </Text>
         </TouchableOpacity>
