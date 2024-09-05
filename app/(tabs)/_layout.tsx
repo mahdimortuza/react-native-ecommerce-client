@@ -5,7 +5,7 @@ import React from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
 
 export const unstable_settings = {
-  initialRouteName: "/notification",
+  initialRouteName: "/login",
 };
 
 export default function TabLayout() {
